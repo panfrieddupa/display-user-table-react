@@ -23,16 +23,42 @@ class PostList extends Component {
             })
     }
 
+    deleteRow = (id, e) => {
+        e.preventDefault()
+        axios.delete(`https://jsonplaceholder.typicode.com/photos/${id}`)
+            .then(response => {
+                console.log(response)
+                console.log(response.data)
+                const photos = this.state.photos.filter(item => item.id !== id)
+                this.setState({ photos })
+            })
+    }
+
     render() {
         const { photos, errorMessage } = this.state
         return (
             <div>
-                List of Users
-                {
-                    photos.map(photo => <div key={(photo.id)}>{photo.title}</div>)
-                }
+                List of Albums
                 <table>
-                    <tr><td>Album Id</td><td>Title</td><td>Thumbnail</td><td>Delete Image</td></tr>
+                    <thead>
+                        <tr><td>Album Id</td><td>Title</td><td>Thumbnail</td><td>Delete Image</td></tr>
+                    </thead>
+
+                    <tbody>
+                        {
+                            photos.map(
+                                photo =>
+                                    <tr key={(photo.id)}>
+                                        <td>{photo.albumId}</td>
+                                        <td>{photo.title}</td>
+                                        <td><img src={photo.thumbnailUrl} alt={photo.title}/></td>
+                                        <td><button onClick={(e) => this.deleteRow(photo.id, e)}>Delete Image?</button></td>
+                                    </tr>
+                            )
+
+                        }
+                    </tbody>
+
 
                 </table>
                 {

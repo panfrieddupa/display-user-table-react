@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import PostNewPhoto from './PostNewPhoto'
+import './postalbum.css'
 
 class PostList extends Component {
 
@@ -38,10 +40,17 @@ class PostList extends Component {
         const { photos, errorMessage } = this.state
         return (
             <div>
-                List of Albums
+                <h1>List of Albums</h1>
+                        <PostNewPhoto />
+                    <div className='table-fixed'>
                 <table>
                     <thead>
-                        <tr><td>Album Id</td><td>Title</td><td>Thumbnail</td><td>Delete Image</td></tr>
+                        <tr>
+                            <th>Album Id</th>
+                            <th>Title</th>
+                            <th>Thumbnail</th>
+                            <th>Delete Image</th>
+                        </tr>
                     </thead>
 
                     <tbody>
@@ -51,16 +60,16 @@ class PostList extends Component {
                                     <tr key={(photo.id)}>
                                         <td>{photo.albumId}</td>
                                         <td>{photo.title}</td>
-                                        <td><img src={photo.thumbnailUrl} alt={photo.title}/></td>
-                                        <td><button onClick={(e) => this.deleteRow(photo.id, e)}>Delete Image?</button></td>
+                                        <td><img src={photo.thumbnailUrl} alt={photo.title} /></td>
+                                        <td><button className='delete-row-btn' onClick={(e) => this.deleteRow(photo.id, e)}>Delete</button></td>
                                     </tr>
                             )
 
                         }
                     </tbody>
 
-
                 </table>
+                </div>
                 {
                     errorMessage ? <div> {errorMessage}</div> : null
                 }

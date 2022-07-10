@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+body {
+
+    background-color: rgb(135, 240, 222);
+    font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+button {
+
+    background-color: rgb(4, 150, 138);
+    border: none;
+    padding: 10px;
+    color: rgb(230, 255, 254);
+    margin: 20px;
+    font-size: larger;
+    font-weight: 600;
+
+}
+
+.table-fixed {
+
+    overflow-y: auto;
+    height: 700px;
+
+}
+
+.table-fixed thead th {
+
+    position: sticky;
+    top: 0;
+    background-color: rgb(0, 103, 110);
+    color: rgb(230, 255, 254);
+    height: 30px;
+
+}
+
+.table-fixed table {
+
+    border-width: 3px;
+    width: 100%;
+    margin: auto;
+
+}
+
+.table-fixed th, .table-fixed td {
+
+    padding: 5px 15px;
+
+}
+
+.table-fixed td {
+
+    background-color: rgb(230, 255, 254);
+    text-align: center;
+
+}
+
+.add-album-popup {
+
+    background-color: rgb(8, 43, 48);
+    padding: 40px;
+    width: 100%;
+
+}
+
+.popup-submit-btn {
+
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+
+}
+
+.popup-inner-box {
+
+    background-color: rgb(230, 255, 254);
+    padding: 40px;
+
+}
+
+.add-album-popup h1 {
+
+    padding-top: 40px;
+    color: rgb(230, 255, 254);
+    text-align: center;
+
+}
+
+.add-album-popup table {
+
+    width: 100%;
+
+}
+
+label {
+
+    font-size: 25px;
+
+}
+
+input[type=text] {
+
+    height: 30px;
+    width: 250px;
+    font-size: 25px;
+    float: right;
+    margin-bottom: 15px;
+
+}
